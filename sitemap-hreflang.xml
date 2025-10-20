@@ -97,112 +97,40 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://YOUR-DOMAIN/ar/" />
   </url>
   <url>
-    <loc>https://YOUR-DOMAIN/en/updates/welcome/</loc>
+    <loc>https://YOUR-DOMAIN/guides/</loc>
     <lastmod>2025-10-20</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://YOUR-DOMAIN/en/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="tl" href="https://YOUR-DOMAIN/ph/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="id" href="https://YOUR-DOMAIN/id/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="vi" href="https://YOUR-DOMAIN/vi/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="bn" href="https://YOUR-DOMAIN/bn/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="en-NG" href="https://YOUR-DOMAIN/ng/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="sw" href="https://YOUR-DOMAIN/sw/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://YOUR-DOMAIN/ar/updates/welcome/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://YOUR-DOMAIN/guides/" />
+    <xhtml:link rel="alternate" hreflang="tl" href="https://YOUR-DOMAIN/ph/guides/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://YOUR-DOMAIN/id/guides/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://YOUR-DOMAIN/vi/guides/" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://YOUR-DOMAIN/bn/guides/" />
+    <xhtml:link rel="alternate" hreflang="en-NG" href="https://YOUR-DOMAIN/ng/guides/" />
+    <xhtml:link rel="alternate" hreflang="sw" href="https://YOUR-DOMAIN/sw/guides/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://YOUR-DOMAIN/ar/guides/" />
   </url>
   <url>
-    <loc>https://YOUR-DOMAIN/ph/updates/welcome/</loc>
+    <loc>https://YOUR-DOMAIN/about.html</loc>
     <lastmod>2025-10-20</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://YOUR-DOMAIN/en/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="tl" href="https://YOUR-DOMAIN/ph/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="id" href="https://YOUR-DOMAIN/id/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="vi" href="https://YOUR-DOMAIN/vi/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="bn" href="https://YOUR-DOMAIN/bn/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="en-NG" href="https://YOUR-DOMAIN/ng/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="sw" href="https://YOUR-DOMAIN/sw/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://YOUR-DOMAIN/ar/updates/welcome/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://YOUR-DOMAIN/about.html" />
+    <xhtml:link rel="alternate" hreflang="tl" href="https://YOUR-DOMAIN/ph/about/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://YOUR-DOMAIN/id/about/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://YOUR-DOMAIN/vi/about/" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://YOUR-DOMAIN/bn/about/" />
+    <xhtml:link rel="alternate" hreflang="en-NG" href="https://YOUR-DOMAIN/ng/about/" />
+    <xhtml:link rel="alternate" hreflang="sw" href="https://YOUR-DOMAIN/sw/about/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://YOUR-DOMAIN/ar/about/" />
   </url>
   <url>
-    <loc>https://YOUR-DOMAIN/id/updates/welcome/</loc>
+    <loc>https://YOUR-DOMAIN/contact.html</loc>
     <lastmod>2025-10-20</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://YOUR-DOMAIN/en/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="tl" href="https://YOUR-DOMAIN/ph/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="id" href="https://YOUR-DOMAIN/id/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="vi" href="https://YOUR-DOMAIN/vi/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="bn" href="https://YOUR-DOMAIN/bn/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="en-NG" href="https://YOUR-DOMAIN/ng/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="sw" href="https://YOUR-DOMAIN/sw/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://YOUR-DOMAIN/ar/updates/welcome/" />
-  </url>
-  <url>
-    <loc>https://YOUR-DOMAIN/vi/updates/welcome/</loc>
-    <lastmod>2025-10-20</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://YOUR-DOMAIN/en/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="tl" href="https://YOUR-DOMAIN/ph/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="id" href="https://YOUR-DOMAIN/id/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="vi" href="https://YOUR-DOMAIN/vi/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="bn" href="https://YOUR-DOMAIN/bn/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="en-NG" href="https://YOUR-DOMAIN/ng/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="sw" href="https://YOUR-DOMAIN/sw/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://YOUR-DOMAIN/ar/updates/welcome/" />
-  </url>
-  <url>
-    <loc>https://YOUR-DOMAIN/bn/updates/welcome/</loc>
-    <lastmod>2025-10-20</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://YOUR-DOMAIN/en/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="tl" href="https://YOUR-DOMAIN/ph/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="id" href="https://YOUR-DOMAIN/id/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="vi" href="https://YOUR-DOMAIN/vi/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="bn" href="https://YOUR-DOMAIN/bn/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="en-NG" href="https://YOUR-DOMAIN/ng/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="sw" href="https://YOUR-DOMAIN/sw/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://YOUR-DOMAIN/ar/updates/welcome/" />
-  </url>
-  <url>
-    <loc>https://YOUR-DOMAIN/ng/updates/welcome/</loc>
-    <lastmod>2025-10-20</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://YOUR-DOMAIN/en/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="tl" href="https://YOUR-DOMAIN/ph/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="id" href="https://YOUR-DOMAIN/id/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="vi" href="https://YOUR-DOMAIN/vi/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="bn" href="https://YOUR-DOMAIN/bn/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="en-NG" href="https://YOUR-DOMAIN/ng/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="sw" href="https://YOUR-DOMAIN/sw/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://YOUR-DOMAIN/ar/updates/welcome/" />
-  </url>
-  <url>
-    <loc>https://YOUR-DOMAIN/sw/updates/welcome/</loc>
-    <lastmod>2025-10-20</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://YOUR-DOMAIN/en/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="tl" href="https://YOUR-DOMAIN/ph/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="id" href="https://YOUR-DOMAIN/id/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="vi" href="https://YOUR-DOMAIN/vi/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="bn" href="https://YOUR-DOMAIN/bn/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="en-NG" href="https://YOUR-DOMAIN/ng/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="sw" href="https://YOUR-DOMAIN/sw/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://YOUR-DOMAIN/ar/updates/welcome/" />
-  </url>
-  <url>
-    <loc>https://YOUR-DOMAIN/ar/updates/welcome/</loc>
-    <lastmod>2025-10-20</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://YOUR-DOMAIN/en/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="tl" href="https://YOUR-DOMAIN/ph/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="id" href="https://YOUR-DOMAIN/id/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="vi" href="https://YOUR-DOMAIN/vi/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="bn" href="https://YOUR-DOMAIN/bn/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="en-NG" href="https://YOUR-DOMAIN/ng/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="sw" href="https://YOUR-DOMAIN/sw/updates/welcome/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://YOUR-DOMAIN/ar/updates/welcome/" />
-  </url>
-  <url>
-    <loc>https://YOUR-DOMAIN/offline/start-a-street-stall.html</loc>
-    <lastmod>2025-10-20</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://YOUR-DOMAIN/offline/start-a-street-stall.html" />
-    <xhtml:link rel="alternate" hreflang="tl" href="https://YOUR-DOMAIN/ph/offline/start-a-street-stall/" />
-    <xhtml:link rel="alternate" hreflang="id" href="https://YOUR-DOMAIN/id/offline/start-a-street-stall/" />
-    <xhtml:link rel="alternate" hreflang="vi" href="https://YOUR-DOMAIN/vi/offline/start-a-street-stall/" />
-    <xhtml:link rel="alternate" hreflang="bn" href="https://YOUR-DOMAIN/bn/offline/start-a-street-stall/" />
-    <xhtml:link rel="alternate" hreflang="en-NG" href="https://YOUR-DOMAIN/ng/offline/start-a-street-stall/" />
-    <xhtml:link rel="alternate" hreflang="sw" href="https://YOUR-DOMAIN/sw/offline/start-a-street-stall/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://YOUR-DOMAIN/ar/offline/start-a-street-stall/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://YOUR-DOMAIN/contact.html" />
+    <xhtml:link rel="alternate" hreflang="tl" href="https://YOUR-DOMAIN/ph/contact/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://YOUR-DOMAIN/id/contact/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://YOUR-DOMAIN/vi/contact/" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://YOUR-DOMAIN/bn/contact/" />
+    <xhtml:link rel="alternate" hreflang="en-NG" href="https://YOUR-DOMAIN/ng/contact/" />
+    <xhtml:link rel="alternate" hreflang="sw" href="https://YOUR-DOMAIN/sw/contact/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://YOUR-DOMAIN/ar/contact/" />
   </url>
   <url>
     <loc>https://YOUR-DOMAIN/online/earn-with-octopus-surveys.html</loc>
@@ -215,5 +143,17 @@
     <xhtml:link rel="alternate" hreflang="en-NG" href="https://YOUR-DOMAIN/ng/online/earn-with-octopus-surveys/" />
     <xhtml:link rel="alternate" hreflang="sw" href="https://YOUR-DOMAIN/sw/online/earn-with-octopus-surveys/" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://YOUR-DOMAIN/ar/online/earn-with-octopus-surveys/" />
+  </url>
+  <url>
+    <loc>https://YOUR-DOMAIN/offline/start-a-street-stall.html</loc>
+    <lastmod>2025-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://YOUR-DOMAIN/offline/start-a-street-stall.html" />
+    <xhtml:link rel="alternate" hreflang="tl" href="https://YOUR-DOMAIN/ph/offline/start-a-street-stall/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://YOUR-DOMAIN/id/offline/start-a-street-stall/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://YOUR-DOMAIN/vi/offline/start-a-street-stall/" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://YOUR-DOMAIN/bn/offline/start-a-street-stall/" />
+    <xhtml:link rel="alternate" hreflang="en-NG" href="https://YOUR-DOMAIN/ng/offline/start-a-street-stall/" />
+    <xhtml:link rel="alternate" hreflang="sw" href="https://YOUR-DOMAIN/sw/offline/start-a-street-stall/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://YOUR-DOMAIN/ar/offline/start-a-street-stall/" />
   </url>
 </urlset>

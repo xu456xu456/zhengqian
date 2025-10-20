@@ -50,9 +50,6 @@ footer{border-top:1px solid var(--line);color:var(--muted);padding:22px 0 40px}
 <base href="../">
 </head>
 <body>
-<div style="margin:16px 0;padding:12px 16px;border:1px dashed #26547c;border-radius:12px;background:#f2f8ff;color:#102a43">
-<strong>Makala zaidi zinakuja hivi karibuni.</strong>
-</div>
 <div class="topbar">
   <div class="container">
     <nav>
@@ -146,7 +143,7 @@ footer{border-top:1px solid var(--line);color:var(--muted);padding:22px 0 40px}
     var parts = location.pathname.split('/').filter(Boolean);
     var idx = parts.findIndex(function(p){ return CODES.indexOf(p)>=0; });
     if(idx===-1){ parts.unshift(lang); } else { parts[idx]=lang; }
-    var next = parts.join('/') + (location.pathname.endsWith('/') ? '' : '/');
+    var next = "/" + parts.join("/") + (location.pathname.endsWith("/") ? "" : "/");
     location.assign(next + location.search + location.hash);
   }
   function makeNode(html){ var d=document.createElement('div'); d.innerHTML=html.trim(); return d.firstElementChild; }
@@ -160,14 +157,11 @@ footer{border-top:1px solid var(--line);color:var(--muted);padding:22px 0 40px}
     var cur = currentLang();
     var sel = W.querySelector('#lang'); Array.from(sel.options).forEach(function(o){ if(o.value===cur) o.selected=true; });
     sel.onchange = function(e){ switchTo(e.target.value); };
-    // Try to insert after "Contact" link
+    // Try to insert after "Contact"
     var links = Array.from(document.querySelectorAll('a, nav a'));
     var contact = links.find(function(a){ var t=(a.textContent||'').trim().toLowerCase(); return t==='contact' || /contact/i.test(t) || /contact/.test((a.getAttribute('href')||'')); });
     if(contact && contact.parentNode){ contact.parentNode.insertBefore(W, contact.nextSibling); return; }
-    // Fallback: append to first nav or header
-    var nav = document.querySelector('nav, header, .navbar, .site-nav, .topnav');
-    if(nav){ nav.appendChild(W); return; }
-    // Last resort: fixed top-right
+    var nav = document.querySelector('nav, header, .navbar, .site-nav, .topnav'); if(nav){ nav.appendChild(W); return; }
     W.style.position='fixed'; W.style.top='12px'; W.style.right='12px'; W.style.zIndex=9999; document.body.appendChild(W);
   }
   if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded', place); } else { place(); }
@@ -183,24 +177,52 @@ footer{border-top:1px solid var(--line);color:var(--muted);padding:22px 0 40px}
     return parts.length && LANGS.indexOf(parts[0])>=0 ? parts[0] : null;
   }
   var lang = curLang();
-  var slugMap = {
-    "/online/earn-with-octopus-surveys.html": "online/earn-with-octopus-surveys/",
-    "/offline/start-a-street-stall.html": "offline/start-a-street-stall/"
-  };
-  function fixLink(a){
+
+  function rewrite(a){
     var href = a.getAttribute('href') || "";
-    if(!/^\\//.test(href)) return; // only absolute-path links
-    var path = href.replace(/^[\\/]+/, "/"); // normalize
-    if(lang && lang!=="en" && slugMap[path]){
-      // route to language wrapper, no leading slash (base-path safe)
-      a.setAttribute('href', lang + "/" + slugMap[path]);
+    if(!href || /^https?:/i.test(href) || /^mailto:/i.test(href) || href[0]==="#") return;
+
+    // Home
+    if(href === "/" || href === "/index.html"){
+      if(lang && lang!=="en") { a.setAttribute('href', lang + "/"); }
+      else { a.setAttribute('href', "./"); }
       return;
     }
-    // otherwise, drop the leading slash to make it relative (base-path safe)
-    a.setAttribute('href', href.replace(/^\\/+/, ""));
+
+    // Two known articles → language wrappers (if not English page)
+    var articleMap = {
+      "/online/earn-with-octopus-surveys.html": "online/earn-with-octopus-surveys/",
+      "/offline/start-a-street-stall.html": "offline/start-a-street-stall/"
+    };
+    if(lang && lang!=="en" && articleMap[href]){
+      a.setAttribute('href', lang + "/" + articleMap[href]);
+      return;
+    }
+
+    // Nav pages: guides, about, contact → prefer language wrappers, fall back to relative root
+    var navMap = {
+      "/guides/": "guides/",
+      "/about.html": "about/",
+      "/contact.html": "contact/"
+    };
+    if(navMap[href]){
+      if(lang && lang!=="en"){
+        a.setAttribute('href', lang + "/" + navMap[href]);
+      } else {
+        a.setAttribute('href', navMap[href]); // becomes relative to current (root)
+      }
+      return;
+    }
+
+    // Any other absolute-path link → drop leading slash to be base-path safe
+    if(href.startsWith("/")){
+      a.setAttribute('href', href.replace(/^\/+/, ""));
+      return;
+    }
   }
+
   function run(){
-    document.querySelectorAll('a[href^="/"]').forEach(fixLink);
+    document.querySelectorAll('a[href]').forEach(rewrite);
   }
   if(document.readyState==="loading"){ document.addEventListener("DOMContentLoaded", run); } else { run(); }
 })();
