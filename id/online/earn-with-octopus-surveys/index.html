@@ -169,6 +169,12 @@
   </script>
 
 
+
+
+
+
+
+
 <script>
 (function(){
   var CODES = ["en","ph","id","vi","bn","ng","sw","ar"];
@@ -180,12 +186,13 @@
     var parts = location.pathname.split('/').filter(Boolean);
     var idx = parts.findIndex(function(p){ return CODES.indexOf(p)>=0; });
     if(idx===-1){ parts.unshift(lang); } else { parts[idx]=lang; }
-    var next = "/" + parts.join("/") + (location.pathname.endsWith("/") ? "" : "/");
-    location.assign(next + location.search + location.hash);
+    var next = parts.join('/') + '/';
+    location.assign(next + location.search + location.hash); // no leading slash → project-path safe
   }
   function makeNode(html){ var d=document.createElement('div'); d.innerHTML=html.trim(); return d.firstElementChild; }
+  var LABELS = {"en":"English","ph":"Tagalog","id":"Bahasa Indonesia","vi":"Tiếng Việt","bn":"বাংলা","ng":"English (NG)","sw":"Kiswahili","ar":"العربية"};
   var SELECT = '<select id="lang" style="appearance:none;background:#0d1b2a;color:#fff;border:1px solid #26547c;padding:8px 12px;border-radius:999px;margin-left:8px;">'
-             + CODES.map(function(c){ return '<option value="'+c+'">'+({"en":"English","ph":"Tagalog","id":"Bahasa Indonesia","vi":"Tiếng Việt","bn":"বাংলা","ng":"English (NG)","sw":"Kiswahili","ar":"العربية"}[c])+'</option>'; }).join('')
+             + CODES.map(function(c){ return '<option value="'+c+'">'+LABELS[c]+'</option>'; }).join('')
              + '</select>';
   var W = makeNode('<span id="lang-inline" style="display:inline-flex;align-items:center;gap:6px;margin-left:12px;padding:4px 8px;border:1px solid #26547c;border-radius:999px;background:#102a43;box-shadow:0 4px 12px rgba(0,0,0,.2);cursor:default;">'
                    + '<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="opacity:.9"><path d="M12 2C6.48 2 2 6.48 2 12 s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.95 6h-2.54a15.88 15.88 0 0 0-1.3-3.23A8.03 8.03 0 0 1 16.95 8zM12 4.07c.83 1.08 1.56 2.56 2.02 3.93H9.98C10.44 6.63 11.17 5.15 12 4.07zM4.26 14a7.86 7.86 0 0 1 0-4h3.03c-.07.66-.11 1.32-.11 2s.04 1.34.11 2H4.26zM7.05 16h2.54c.28 1.12.75 2.35 1.3 3.23A8.03 8.03 0 0 1 7.05 16zM9.98 8h4.04c.28 1.12.46 2.35.46 4s-.18 2.88-.46 4H9.98A17.7 17.7 0 0 1 9.52 12c0-1.65.18-2.88.46-4zM13.11 19.23c.55-.88 1.02-2.11 1.3-3.23h2.54a8.03 8.03 0 0 1-3.84 3.23zM16.71 14c.07-.66.11-1.32.11-2s-.04-1.34-.11-2h3.03a7.86 7.86 0 0 1 0 4h-3.03zM8.59 4.77A15.88 15.88 0 0 0 7.29 8H4.76A8.03 8.03 0 0 1 8.59 4.77z"/></svg>'
@@ -194,7 +201,6 @@
     var cur = currentLang();
     var sel = W.querySelector('#lang'); Array.from(sel.options).forEach(function(o){ if(o.value===cur) o.selected=true; });
     sel.onchange = function(e){ switchTo(e.target.value); };
-    // Try to insert after "Contact"
     var links = Array.from(document.querySelectorAll('a, nav a'));
     var contact = links.find(function(a){ var t=(a.textContent||'').trim().toLowerCase(); return t==='contact' || /contact/i.test(t) || /contact/.test((a.getAttribute('href')||'')); });
     if(contact && contact.parentNode){ contact.parentNode.insertBefore(W, contact.nextSibling); return; }
@@ -205,7 +211,6 @@
 })();
 </script>
 
-
 <script>
 (function(){
   var LANGS = ["en","ph","id","vi","bn","ng","sw","ar"];
@@ -215,52 +220,61 @@
   }
   var lang = curLang();
 
+  function isAbs(href){ return href && href[0]=="/"; }
+  function isExternal(href){ return /^https?:/i.test(href) || /^mailto:/i.test(href) || /^tel:/i.test(href); }
+
   function rewrite(a){
     var href = a.getAttribute('href') || "";
-    if(!href || /^https?:/i.test(href) || /^mailto:/i.test(href) || href[0]==="#") return;
+    if(!href || isExternal(href) || href[0]==="#") return;
 
     // Home
-    if(href === "/" || href === "/index.html"){
-      if(lang && lang!=="en") { a.setAttribute('href', lang + "/"); }
-      else { a.setAttribute('href', "./"); }
+    if(href === "/" || href.toLowerCase() === "/index.html" || href.toLowerCase() === "index.html"){
+      if(lang && lang!=="en"){ a.setAttribute('href', lang + "/"); } else { a.setAttribute('href', "./"); }
       return;
     }
 
-    // Two known articles → language wrappers (if not English page)
-    var articleMap = {
-      "/online/earn-with-octopus-surveys.html": "online/earn-with-octopus-surveys/",
-      "/offline/start-a-street-stall.html": "offline/start-a-street-stall/"
-    };
-    if(lang && lang!=="en" && articleMap[href]){
-      a.setAttribute('href', lang + "/" + articleMap[href]);
+    // Normalize simple slugs
+    var h = href.replace(/^\//, "");
+    var lower = h.toLowerCase();
+
+    // About
+    if(lower === "about" || lower === "about/" || lower === "about.html"){
+      if(lang && lang!=="en"){ a.setAttribute('href', lang + "/about/"); }
+      else { a.setAttribute('href', "about.html"); }
+      return;
+    }
+    // Contact
+    if(lower === "contact" || lower === "contact/" || lower === "contact.html"){
+      if(lang && lang!=="en"){ a.setAttribute('href', lang + "/contact/"); }
+      else { a.setAttribute('href', "contact.html"); }
+      return;
+    }
+    // Guides
+    if(lower === "guides" || lower === "guides/"){
+      if(lang && lang!=="en"){ a.setAttribute('href', lang + "/guides/"); }
+      else { a.setAttribute('href', "guides/"); }
       return;
     }
 
-    // Nav pages: guides, about, contact → prefer language wrappers, fall back to relative root
-    var navMap = {
-      "/guides/": "guides/",
-      "/about.html": "about/",
-      "/contact.html": "contact/"
-    };
-    if(navMap[href]){
-      if(lang && lang!=="en"){
-        a.setAttribute('href', lang + "/" + navMap[href]);
-      } else {
-        a.setAttribute('href', navMap[href]); // becomes relative to current (root)
-      }
+    // Articles (two known English pages -> wrappers on non-EN)
+    if(lower === "online/earn-with-octopus-surveys.html"){
+      if(lang && lang!=="en"){ a.setAttribute('href', lang + "/online/earn-with-octopus-surveys/"); }
+      else { a.setAttribute('href', "online/earn-with-octopus-surveys.html"); }
+      return;
+    }
+    if(lower === "offline/start-a-street-stall.html"){
+      if(lang && lang!=="en"){ a.setAttribute('href', lang + "/offline/start-a-street-stall/"); }
+      else { a.setAttribute('href', "offline/start-a-street-stall.html"); }
       return;
     }
 
-    // Any other absolute-path link → drop leading slash to be base-path safe
-    if(href.startsWith("/")){
+    // Generic absolute path → drop leading slash to make it project-path safe
+    if(isAbs(href)){
       a.setAttribute('href', href.replace(/^\/+/, ""));
-      return;
     }
   }
 
-  function run(){
-    document.querySelectorAll('a[href]').forEach(rewrite);
-  }
+  function run(){ document.querySelectorAll('a[href]').forEach(rewrite); }
   if(document.readyState==="loading"){ document.addEventListener("DOMContentLoaded", run); } else { run(); }
 })();
 </script>
